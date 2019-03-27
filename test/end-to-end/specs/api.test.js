@@ -1,4 +1,5 @@
 const commands = require("../utils/commands");
+const blueprintsPage = require("../pages/blueprints.page");
 
 // acceptable API response time; we want that to be 1s
 // (https://www.nngroup.com/articles/response-times-3-important-limits/)
@@ -10,6 +11,7 @@ describe("lorax-composer api sanity test", function() {
     commands.login();
     // Edge does not support the following command so have to keep default timeout(3 seconds)
     // browser.timeouts({ script: timeout });
+    blueprintsPage.loading();
   });
 
   function apiFetchTest(endpoint, options = { body: "" }) {
